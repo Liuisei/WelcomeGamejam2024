@@ -505,6 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475461311}
   - component: {fileID: 475461312}
+  - component: {fileID: 475461313}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -529,10 +530,10 @@ RectTransform:
   - {fileID: 1166379267}
   m_Father: {fileID: 2054004334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -453.91, y: -950}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 25, y: -252}
+  m_SizeDelta: {x: -399.2229, y: -1831.6267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475461312
 MonoBehaviour:
@@ -581,10 +582,25 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.25
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &475461313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475461310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a958a24ff72b244bd052dc08c48d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  MaxHP: 100
+  HPSlider: {fileID: 475461312}
 --- !u!1 &1166379266
 GameObject:
   m_ObjectHideFlags: 0
