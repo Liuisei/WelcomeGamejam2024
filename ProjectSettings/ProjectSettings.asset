@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: e8b6ba99d8da7c44692449b4342565ac
+  productGUID: 86a324fbcfa9c084f8448098ca5570b4
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: WelcomeGamejam2024K
+  productName: WelcomeGameJam2024k
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -819,14 +819,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: WelcomeGamejam2024K
+  metroPackageName: WelcomeGameJam2024k
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: WelcomeGamejam2024K
+  metroApplicationDescription: WelcomeGameJam2024k
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -895,10 +895,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: a78a3ecb-dacb-4c83-993c-dfa06f0adb6f
+  cloudProjectId: 8032fa78-3505-4c83-a5e9-8d9d728cc91b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: WelcomeGamejam2024K
+  projectName: WelcomeGameJam2024k
   organizationId: liuliu0512
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
