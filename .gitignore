@@ -71,3 +71,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Sprite folder/
+Assets/Sound Folder/Be_Happy.wav
+Assets/Sound Folder/Be_Happy.wav.meta
+Assets/Sound Folder/
