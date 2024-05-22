@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SpeedUpItem : MonoBehaviour
 {
-    [SerializeField] float _plusSpeed;
+    [SerializeField] int _plusSpeed;
     // Start is called before the first frame update
     //
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("エナドリor水をゲット");
-        GameManager.Instance.SetSpeed(_plusSpeed);
+        Debug.Log("繧ｨ繝翫ラ繝ｪor豌ｴ繧偵ご繝�繝�");
+        GameManager.Instance.AddSpeed(_plusSpeed);
     }
   
 }
