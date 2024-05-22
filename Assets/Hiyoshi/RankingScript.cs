@@ -20,7 +20,7 @@ public class RankingScript : MonoBehaviour
         {
             if (GameData.Instance.rankings_[i] != null)
             {
-                _rankString = (GameData.Instance.rankings_[i].name + ":" + GameData.Instance.rankings_[i].score).ToString();
+                _rankString = (i + "ˆÊ" + GameData.Instance.rankings_[i].name + ":" + GameData.Instance.rankings_[i].score).ToString();
                 _rankText.text += _rankString + "\n";
             }
             else return;
