@@ -1,22 +1,61 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class DataManager : BaseSingleton<DataManager>
+[DefaultExecutionOrder(-10)]
+public class GameData : BaseSingleton<GameData>
 {
+    protected override void     AwakeFunction() {  }
 
-    string _playerName;
+    List<Ranking> _rankings = new List<Ranking>();
+    public List<Ranking> rankings_ { get { return _rankings; } }
 
-    public string PlayerName { get => _playerName; set => _playerName = value; }
-
-    protected override void AwakeFunction() { }
-
-
-
-   
-    public void SaveName(string playerName)
+    public void Start()
     {
-        PlayerName = playerName;
-        Debug.Log(PlayerName);
+        LoadRankings();
     }
+
+    public void OnDestroy()
+    {
+        SaveRankings();
+    }
+
+    public void LoadRankings()
+    {
+        string json = PlayerPrefs.GetString("a");
+        _rankings = JsonUtility.FromJson<List<Ranking>>(json);
+    }
+
+    public void SaveRankings()
+    {
+        string json = JsonUtility.ToJson(_rankings);
+        PlayerPrefs.SetString("a", json);
+    }
+    public void Clear()
+    {
+        _rankings = new List<Ranking>();
+        string json = JsonUtility.ToJson(_rankings);
+        PlayerPrefs.SetString("a", json);
+    }
+
+    public void SortRanking()
+    {
+        _rankings.OrderBy(e => e.score);
+    }
+    public void AddRanking(float _score, string _name)
+    {
+        var ranking = new Ranking();
+        ranking.score = _score;
+        ranking.name = _name;
+        _rankings.Add(ranking);
+        SortRanking();
+    }
+
+}
+[Serializable]
+public class Ranking
+{
+    public float score;
+    public string name;
 }

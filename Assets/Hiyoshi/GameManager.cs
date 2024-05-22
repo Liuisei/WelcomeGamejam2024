@@ -15,9 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] int   _minSpeed;
 
 
-    [SerializeField] int _clearScene;
-
-
     public int   Speed
     {
         get { return _speed; }
@@ -58,10 +55,8 @@ public class GameManager : MonoBehaviour
 
     public void Gole()
     {
-        GameData.Instance.Score = _timer;
-        SceneManager.LoadScene(_clearScene);
+        Debug.Log("Gole");
+        DataManager.Instance.Time = _timer;
+        SceneManager.LoadScene(2);
     }
-    
-    
-    
 }
