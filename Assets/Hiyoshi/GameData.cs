@@ -1,10 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1)]
 public class GameData : MonoBehaviour
 {
     public static GameData Instance { get; private set; }
@@ -12,39 +11,47 @@ public class GameData : MonoBehaviour
     {
         Instance = this;
     }
-    List<Ranking> rankings = new List<Ranking>(11);
-    public List<Ranking> rankings_ { get { return rankings; } }
+    List<Ranking> _rankings = new List<Ranking>();
+    public List<Ranking> rankings_ { get { return _rankings; } }
 
-    void Start()
+    public void Start()
     {
         LoadRankings();
     }
 
-    void OnDestroy()
+    public void OnDestroy()
     {
         SaveRankings();
     }
 
-    void LoadRankings()
+    public void LoadRankings()
     {
         string json = PlayerPrefs.GetString("a");
-        rankings = JsonUtility.FromJson<List<Ranking>>(json);
+        _rankings = JsonUtility.FromJson<List<Ranking>>(json);
     }
 
-    void SaveRankings()
+    public void SaveRankings()
     {
-        string json = JsonUtility.ToJson(rankings);
+        string json = JsonUtility.ToJson(_rankings);
+        PlayerPrefs.SetString("a", json);
+    }
+    public void Clear()
+    {
+        _rankings = new List<Ranking>();
+        string json = JsonUtility.ToJson(_rankings);
         PlayerPrefs.SetString("a", json);
     }
 
-    void SortRanking()
+    public void SortRanking()
     {
-        rankings.OrderBy(e => e.score);
+        _rankings.OrderBy(e => e.score);
     }
-    private void AddRanking(float _score, string _name)
+    public void AddRanking(float _score, string _name)
     {
-        rankings[11].score = _score;
-        rankings[11].name = _name;
+        var ranking = new Ranking();
+        ranking.score = _score;
+        ranking.name = _name;
+        _rankings.Add(ranking);
         SortRanking();
     }
 }
