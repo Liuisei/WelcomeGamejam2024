@@ -636,8 +636,8 @@ MonoBehaviour:
   _onClickUnityAction:
     m_PersistentCalls:
       m_Calls: []
-  _pressedSprite: {fileID: 0}
-  _hoverSprite: {fileID: 0}
+  _pressedSprite: {fileID: 21300000, guid: 4a197b2927f674549bf4e150fa37d980, type: 3}
+  _hoverSprite: {fileID: 21300000, guid: 4a197b2927f674549bf4e150fa37d980, type: 3}
   _pressedAnimation: {fileID: 0}
   _enterSe: {fileID: 0}
   _clickedSe: {fileID: 0}

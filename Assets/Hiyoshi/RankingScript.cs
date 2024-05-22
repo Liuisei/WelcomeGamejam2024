@@ -18,9 +18,9 @@ public class RankingScript : MonoBehaviour
         _rankString = null;
         for (int i = 0; i < 10; i++)
         {
-            if (GameData.Instance.rankings_[i] != null)
+            if (GameData.Instance.Rankings[i] != null)
             {
-                _rankString = (i + "ˆÊ" + GameData.Instance.rankings_[i].name + ":" + GameData.Instance.rankings_[i].score).ToString();
+                _rankString = (i + "ä½" + GameData.Instance.Rankings[i].name + ":" + GameData.Instance.Rankings[i].score).ToString();
                 _rankText.text += _rankString + "\n";
             }
             else return;

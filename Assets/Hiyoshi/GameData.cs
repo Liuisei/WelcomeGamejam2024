@@ -9,7 +9,7 @@ public class GameData : BaseSingleton<GameData>
     protected override void     AwakeFunction() {  }
 
     List<Ranking> _rankings = new List<Ranking>();
-    public List<Ranking> rankings_ { get { return _rankings; } }
+    public List<Ranking> Rankings { get { return _rankings; } }
 
     public void Start()
     {
@@ -24,7 +24,7 @@ public class GameData : BaseSingleton<GameData>
     public void LoadRankings()
     {
         string json = PlayerPrefs.GetString("a");
-        _rankings = JsonUtility.FromJson<List<Ranking>>(json);
+        _rankings = JsonUtility.FromJson<List<Ranking>>(json) ?? new List<Ranking>();
     }
 
     public void SaveRankings()
