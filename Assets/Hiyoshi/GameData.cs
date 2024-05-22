@@ -15,6 +15,9 @@ public class GameData : MonoBehaviour
     List<Ranking> rankings = new List<Ranking>(11);
     public List<Ranking> rankings_ { get { return rankings; } }
 
+    float        _score;
+    public float Score { get { return _score; } set { _score = value; } }
+
     void Start()
     {
         LoadRankings();
@@ -47,6 +50,10 @@ public class GameData : MonoBehaviour
         rankings[11].name = _name;
         SortRanking();
     }
+    
+    
+    
+    
 }
 [Serializable]
 public class Ranking

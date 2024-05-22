@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] float _timer;
     [SerializeField] int   _maxSpeed;
     [SerializeField] int   _minSpeed;
+
+
+    [SerializeField] int _clearScene;
 
 
     public int   Speed
@@ -54,6 +58,10 @@ public class GameManager : MonoBehaviour
 
     public void Gole()
     {
-        Debug.Log("Gole");
+        GameData.Instance.Score = _timer;
+        SceneManager.LoadScene(_clearScene);
     }
+    
+    
+    
 }
