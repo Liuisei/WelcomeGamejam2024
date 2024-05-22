@@ -8,7 +8,7 @@ public class SpeedMeter : MonoBehaviour
     [SerializeField] Text _speedText;
     void Update()
     {
-        _speedText.text = GameManager.Instance.speed.ToString();    
+        _speedText.text = GameManager.Instance.Speed.ToString();    
     }
    
 }

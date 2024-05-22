@@ -17,17 +17,5 @@ public class TimerScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (_isRunning == true)
-        {
-            _timer += Time.deltaTime;
-        }
-        _text.text = _timer.ToString();
 
-    }
-    public void StartTimer()
-    {
-        _isRunning =! _isRunning;
-    }
 }
