@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class InputName : MonoBehaviour
 {
     string _name;
-    [SerializeField] Text _inputText;
+    [SerializeField] InputField _inputField;
+    [SerializeField] Text _text;
+
     public void savename()
     {
-        _name = _inputText.text;
-        Debug.Log(_name);
+        _inputField = _inputField.GetComponent<InputField>();  
+        _text = _text.GetComponent<Text>();
+       DataManager.Instance.SaveName(_text.text);
     }
 }
