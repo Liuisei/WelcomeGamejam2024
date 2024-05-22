@@ -25,7 +25,8 @@ public class ItemGenerator : MonoBehaviour
     IEnumerator CoolTime()
     {
         yield return new WaitForSeconds(spawnrange);
-        CoolTime();
+        Spawn();
+        StartCoroutine(nameof(CoolTime));
     }
 
 
