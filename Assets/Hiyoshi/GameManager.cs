@@ -10,9 +10,22 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text  _timerText;
     [SerializeField] bool  _isRunning;
     [SerializeField] float _timer;
+    [SerializeField] int   _maxSpeed;
+    [SerializeField] int   _minSpeed;
 
 
-    public int   Speed     { get { return _speed; }     set { _speed     = value; } }
+    public int   Speed
+    {
+        get { return _speed; }
+        set
+        {
+            if (value      < _minSpeed) { value = _minSpeed; }
+            else if (value > _maxSpeed) { value = _maxSpeed; }
+
+            _speed     = value;
+        }
+    }
+
     public bool  IsRunning { get { return _isRunning; } set { _isRunning = value; } }
     public float Timer     { get { return _timer; }     set { _timer     = value; } }
     void         Awake()   { Instance = this; }
@@ -25,7 +38,7 @@ public class GameManager : MonoBehaviour
     public static    GameManager Instance { get; private set; }
 
 
-    public void AddSpeed(int x) { _speed += x; }
+    public void AddSpeed(int x) { Speed += x; }
 
     void Update()
     {
@@ -38,4 +51,9 @@ public class GameManager : MonoBehaviour
 
     public void StartRun() { StartTimer(); }
     public void GoelRun()  { StopTimer(); }
+
+    public void Gole()
+    {
+        Debug.Log("Gole");
+    }
 }

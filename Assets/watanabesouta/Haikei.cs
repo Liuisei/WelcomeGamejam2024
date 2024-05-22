@@ -1,13 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Haikei : MonoBehaviour
 {
-    [SerializeField] List<GameObject> _haikeiList = new List<GameObject>();
-    [SerializeField] int _speed;
-    [SerializeField] int _minLineY;
-    [SerializeField] int _range;
+    [SerializeField]              List<GameObject> _haikeiList = new List<GameObject>();
+    [SerializeField]              int              _minLineY;
+    [Range(0, 10),SerializeField] float            _range;
+    GameManager                                    _gM;
+
+    void Start()
+    {
+        _gM = GameManager.Instance;
+    }
     private void FixedUpdate()
     {
 
@@ -15,7 +22,7 @@ public class Haikei : MonoBehaviour
         {
             if (i == 2)
             {
-                _haikeiList[i].transform.position += new Vector3(0, _speed / -1000f);
+                _haikeiList[i].transform.position += new Vector3(0, _gM.Speed / -1000f);
             }
             else
             {
