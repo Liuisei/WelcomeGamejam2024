@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Liu/Clear.unity
     guid: 010edbb7d98ee60479ac9cb7e127775f
+  - enabled: 1
+    path: Assets/Liu/ranking.unity
+    guid: 7df0d5264d5c19b45aa4e9024d5dd133
   m_configObjects: {}

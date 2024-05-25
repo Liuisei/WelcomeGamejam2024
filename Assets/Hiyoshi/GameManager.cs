@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int   _minSpeed;
 
 
+    public int MaxSpeed { get { return _maxSpeed; } set { _maxSpeed = value; } }
+
     public int   Speed
     {
         get { return _speed; }

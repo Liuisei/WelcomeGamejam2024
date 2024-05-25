@@ -6,13 +6,19 @@ using UnityEngine.UI;
 
 public class Tairyoku : MonoBehaviour
 {
-    [Range(0, 100)][SerializeField] int HP = 100;
-    [SerializeField] int MaxHP = 100;
-    [SerializeField] Slider HPSlider;
+    [Range(0, 100)] [SerializeField] int    HP    = 100;
+    [SerializeField]                 int    MaxHP = 100;
+    [SerializeField]                 Slider HPSlider;
 
+
+    void Start()
+    {
+        MaxHP = GameManager.Instance.MaxSpeed;
+    }
 
     void Update()
     {
-        HPSlider.value = (float)HP / (float)MaxHP;
+        HP = GameManager.Instance.Speed;
+        HPSlider.value = (float)HP / (float)MaxHP; 
     }
 }

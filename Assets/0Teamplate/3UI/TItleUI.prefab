@@ -378,7 +378,7 @@ MonoBehaviour:
   _pressedAnimation: {fileID: 0}
   _enterSe: {fileID: 0}
   _clickedSe: {fileID: 0}
-  _sceneNumber: 0
+  _sceneNumber: 3
 --- !u!1 &3452100486939839797
 GameObject:
   m_ObjectHideFlags: 0

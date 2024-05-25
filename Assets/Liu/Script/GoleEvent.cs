@@ -11,6 +11,7 @@ public class GoleEvent : MonoBehaviour
         {
             Debug.Log("Gole");
             GameManager.Instance.Gole();
+            GameData.Instance.SaveRankings();
         }
     }
 }

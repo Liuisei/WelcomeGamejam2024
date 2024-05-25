@@ -24,12 +24,22 @@ public class GameData : BaseSingleton<GameData>
     public void LoadRankings()
     {
         string json = PlayerPrefs.GetString("a");
-        _rankings = JsonUtility.FromJson<List<Ranking>>(json) ?? new List<Ranking>();
+        if (string.IsNullOrEmpty(json))
+        {
+            _rankings = new List<Ranking>();
+        }
+        else
+        {
+            RankingsWrapper wrapper = JsonUtility.FromJson<RankingsWrapper>(json);
+            _rankings = wrapper != null ? wrapper.rankings : new List<Ranking>();
+        }
     }
 
     public void SaveRankings()
     {
-        string json = JsonUtility.ToJson(_rankings);
+        RankingsWrapper wrapper = new RankingsWrapper();
+        wrapper.rankings = _rankings;
+        string json = JsonUtility.ToJson(wrapper);
         PlayerPrefs.SetString("a", json);
     }
     public void Clear()
@@ -58,4 +68,9 @@ public class Ranking
 {
     public float score;
     public string name;
+}
+[System.Serializable]
+public class RankingsWrapper
+{
+    public List<Ranking> rankings;
 }

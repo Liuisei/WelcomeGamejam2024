@@ -7,20 +7,19 @@ using UnityEngine.UI;
 public class RankingScript : MonoBehaviour
 {
     [SerializeField] Text _rankText;
-    string _rankString;
+    string                _rankString;
     private void Start()
     {
-        GameData.Instance.SaveRankings();
         RankToString();
     }
     public void RankToString()
     {
-        _rankString = null;
-        for (int i = 0; i < 10; i++)
+        Debug.Log(GameData.Instance.Rankings.Count);
+        for (int i = 0;  i < GameData.Instance.Rankings.Count || i > 10       ; i++)
         {
             if (GameData.Instance.Rankings[i] != null)
             {
-                _rankString = (i + "位" + GameData.Instance.Rankings[i].name + ":" + GameData.Instance.Rankings[i].score).ToString();
+                _rankString    =  (i + "位" + GameData.Instance.Rankings[i].name + ":" + GameData.Instance.Rankings[i].score.ToString("000.00"));
                 _rankText.text += _rankString + "\n";
             }
             else return;
